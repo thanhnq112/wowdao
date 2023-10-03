@@ -1,0 +1,56 @@
+//
+// timeline_horizontal.scss
+//
+
+.timeline-horizontal {
+    position: relative;
+    height: 100%;
+    flex: 1;
+
+    &__element {
+        list-style: none;
+        text-align: start;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px*$page-home-scale;
+        float: left;
+        position: relative;
+        font-size: max(15px*$page-home-scale, 14px);
+        line-height: max(20px*$page-home-scale, 20px);
+
+        &::after {
+            position: absolute;
+            top: 60px*$page-home-scale;
+            // transform: translateY(-50%);
+            content: "";
+            height: 2px;
+            width: 100%;
+            display: block;
+            background-color: #FFFFFF;
+            z-index: -1;
+        }
+
+        &:last-child::after {
+            content: none;
+        }
+
+        svg {
+            width: max(40px*$page-home-scale, 20px);
+            height: max(40px*$page-home-scale, 20px);
+            position: absolute;
+            top: 60px*$page-home-scale;
+            transform: translateY(-50%);
+        }
+
+        &__step {
+            height: 20px*$page-home-scale;
+        }
+
+        &__value {
+            width: 90%;
+            margin-top: 60px*$page-home-scale;
+        }
+    }
+}

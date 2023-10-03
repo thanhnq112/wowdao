@@ -1,0 +1,126 @@
+//
+// footer.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+.footer {
+    &__theme-switch {
+        width: 100%;
+    }
+
+    &__btn {
+        width: 60px*$page-home-scale;
+        height: 60px*$page-home-scale;
+        border: 1px solid $btn-link-color;
+        border-radius: 100%;
+        padding: 0.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px*$page-home-scale;
+        // @include toRem(font-size, 24);
+        @include toRem(line-height, 30);
+        font-weight: 500;
+
+        svg {
+            fill: $btn-link-color;
+            color: $btn-link-color;
+            width: 25px*$page-home-scale;
+            height: 25px*$page-home-scale;
+        }
+
+        &:hover {
+            background-color: $navigation-bg-color;
+            color: $navigation-bg-color-text;
+
+            svg {
+                color: $navigation-bg-color-text,
+            }
+        }
+    }
+
+    &__left,
+    &__right {
+        display: flex;
+        position: fixed;
+        @include toRem(gap, 18);
+        bottom: $body-margin-bottom;
+        z-index: 10;
+        height: $footer-height;
+
+        @include for-phone-only {
+            display: none;
+        }
+    }
+
+    &__left {
+        left: $body-margin-left;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__right {
+        right: $body-margin-right;
+        align-items: flex-end;
+    }
+
+
+    &__social {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &__links {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: $footer-bg-color;
+            padding: 0.5rem 0rem;
+            @include toRem(gap, 4);
+            @include toRem(width, 50);
+            @include toRem(border-radius, 10);
+            @include toRem(margin-bottom, 10);
+
+            &--active {
+                display: flex;
+            }
+        }
+    }
+
+    &__mobileBtn {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 73px;
+        width: calc(100vw - 40px);
+        border-radius: 40px;
+        margin: 0 20px 26px 20px;
+        justify-content: left;
+        align-items: center;
+        text-align: center;
+        background-color: white;
+    }
+
+
+    @include for-phone-only {
+        &__mobileBtn {
+            display: flex;
+        }
+
+        // display: none;
+    }
+
+}

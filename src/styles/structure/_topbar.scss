@@ -1,0 +1,66 @@
+//
+// topbar.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+.top-bar {
+    // width: $body-width;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    z-index: 9;
+    top: $body-margin-top;
+    left: 50%;
+    height: $topbar-height;
+    transform: translateX(-50%);
+    justify-content: space-between;
+    // background-color: green;
+
+    @include for-phone-only {
+        height: auto;
+        @include toRem(padding-top, 44);
+        @include toRem(padding-left, 23);
+        @include toRem(padding-right, 23);
+        // padding: 40px 22px 0 40px;
+        // padding: 0 22px;
+        // padding-top: 40px;
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: row;
+
+        &__image {
+
+            // display: none;
+            @include for-phone-only {
+                width: 161px;
+                height: 42px;
+
+            }
+
+        }
+    }
+
+    &__btn-list {
+
+        display: none;
+        @include transition(display);
+
+        @include for-desktop-up {
+            display: block;
+        }
+
+        @include for-phone-only {
+            // display: block;
+            // position: absolute;
+            // bottom: -100px;
+            // bottom: 0;
+            // left: 0;
+        }
+    }
+}

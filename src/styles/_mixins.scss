@@ -1,0 +1,199 @@
+@import "variables";
+@import "placeholder";
+
+@function theme-var($key, $fallback: null, $map: $theme-map-light) {
+    @if not map-has-key($map, $key) {
+        @error "key: '#{$key}', is not a key in map: #{$map}";
+    }
+
+    @if ($fallback) {
+        @return var($key, $fallback);
+    }
+
+    @else {
+        @return var($key);
+    }
+}
+
+@mixin spread-map($map: ()) {
+
+    @each $key,
+    $value in $map {
+        #{$key}: $value;
+    }
+}
+
+@mixin home-slide-layout {
+    @for $i from 1 through $nb_page_home_slides {
+        .page-home__slide-#{$i} {
+            @extend %page-home-slide-layout;
+        }
+    }
+}
+
+@mixin animation-mixin($name, $from) {
+    @keyframes #{$name} {
+        0% {
+            transform: translate3d(0, $from, 0);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translatez(0);
+            opacity: 1;
+        }
+    }
+}
+
+@mixin animation_fadeInRight() {
+    @keyframes fadeInRight {
+        0% {
+            transform: rotate3d(0, 0, 0, 45deg);
+            opacity: 0;
+        }
+
+        100% {
+            transform: rotate3d(0, 0, 0, 180deg);
+            opacity: 1;
+        }
+    }
+}
+
+@mixin animation_rotation() {
+    @-moz-keyframes spin {
+        100% {
+            -moz-transform: rotate(50deg);
+        }
+    }
+
+    @-webkit-keyframes spin {
+        100% {
+            -webkit-transform: rotate(50deg);
+        }
+    }
+
+    @keyframes spin {
+        100% {
+            -webkit-transform: rotate(50deg);
+            transform: rotate(50deg);
+        }
+    }
+
+    @keyframes rotate_all {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+}
+
+@mixin animation_zoomIn() {
+    @keyframes zoomIn {
+        0% {
+            opacity: 0;
+            transform: scale3d(.3, .3, .3)
+        }
+
+        50% {
+            opacity: 1
+        }
+    }
+}
+
+@mixin animation__lightIn() {
+    @keyframes lightIn {
+        0% {
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 0.1;
+        }
+
+        20% {
+            opacity: 0.2;
+        }
+
+        30% {
+            opacity: 0.3;
+        }
+
+        40% {
+            opacity: 0.4;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+
+        60% {
+            opacity: 0.6;
+        }
+
+        70% {
+            opacity: 0.7;
+        }
+
+        80% {
+            opacity: 0.8;
+        }
+
+        90% {
+            opacity: 0.9;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin transition($properties) {
+    transition-duration: .35s;
+    transition-property: #{$properties};
+    transition-timing-function: ease;
+}
+
+@mixin toRem($property, $value) {
+    #{$property}: calc($value / 16) * $scale + rem;
+}
+
+@mixin for-small-phone-only {
+    @media (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}

@@ -1,0 +1,64 @@
+//
+// hero_banner.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+@include animation-mixin(fadeInUp, 100%);
+@include animation_zoomIn();
+@include animation__lightIn();
+
+.hero-banner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    @include transition(height);
+
+    &__content {
+        position: relative;
+
+        &__effect {
+            position: relative;
+            z-index: -1;
+        }
+
+        &__camera {
+            position: relative;
+            @include toRem(top, 44);
+            @include toRem(left, -425);
+
+            img {
+                position: absolute;
+                @include toRem(top, -33);
+                @include toRem(left, 196);
+            }
+
+            &__light {
+                position: absolute;
+                @include toRem(top, -129);
+                @include toRem(left, 93);
+
+                img {
+                    animation: lightIn 3s ease-in-out infinite alternate-reverse;
+                }
+            }
+        }
+
+        &__text {
+            font-family: var(--montserrat-font);
+            @include toRem(font-size, 122);
+            @include toRem(line-height, 120);
+            letter-spacing: -0.08em;
+            font-weight: 900;
+            text-align: center;
+            @include transition(opacity);
+            z-index: 2;
+        }
+    }
+}

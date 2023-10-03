@@ -1,0 +1,189 @@
+//
+// timeline-component.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+.timeline-home {
+    // margin-top: min(18vh, 200px);
+
+    .page-home__title {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        margin-bottom: 50px*$page-home-scale;
+    }
+
+    &__line {
+        // margin: 32px*$page-home-scale 0 64px*$page-home-scale 0;
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+
+        div:first-child {
+            border: 2px solid #96E9FF;
+            height: 1px;
+            z-index: 1;
+        }
+
+        div:last-child {
+            z-index: -1;
+            position: absolute;
+            top: -16px;
+            width: 100%;
+            border: 16px solid #4141C1;
+            filter: blur(12px);
+            height: 1px;
+        }
+    }
+
+    &__inner {
+        position: relative;
+        // height: 65vh;
+    }
+
+    &__timelines {
+        position: relative;
+        top: -7px;
+        display: flex;
+
+        justify-content: space-around;
+        @include toRem(gap, 30);
+        margin: 0 2rem;
+
+        @include for-tablet-landscape-up {
+            @include toRem(gap, 50);
+        }
+
+        @include for-desktop-up {
+            @include toRem(gap, 70);
+        }
+
+
+    }
+
+    &__component {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        &__circle {
+            visibility: hidden;
+            width: 14px*$page-home-scale;
+            height: 14px*$page-home-scale;
+            // @include toRem(width, 14);
+            // @include toRem(height, 14);
+            border-radius: 100%;
+            background-color: #96E9FF;
+        }
+
+        &__line {
+            visibility: hidden;
+            // margin:auto;
+            @include toRem(width, 4);
+            @include toRem(min-height, 50);
+            background-color: #96E9FF;
+        }
+
+        &__decoration {
+            visibility: visible;
+        }
+
+        &__inner {
+            position: relative;
+            background: linear-gradient(150.87deg, rgba(240, 240, 240, 0.1408) -0.05%, rgba(255, 255, 255, 0.16) 98.51%);
+            backdrop-filter: blur(105.5px);
+            /* Note: backdrop-filter has minimal browser support */
+
+            border-radius: 20px;
+            min-height: min(450px*$page-home-scale, 350px);
+            // @include toRem(width, 341);
+            padding: 20px*$page-home-scale;
+            border: 2px solid rgba(240, 240, 240, 0.1408);
+
+            &:hover {
+                border: 2px solid #96E9FF;
+
+                .timeline-component__bg {
+                    display: block;
+                }
+            }
+        }
+
+        &__bg {
+            border: 2px solid #96E9FF;
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(91.39deg, #330056 2.46%, #2100A8 34.71%, #0355CD 71.49%, #2AB3FF 99.21%);
+            background-blend-mode: overlay;
+            opacity: 0.58;
+            filter: blur(91.5px);
+            z-index: -1;
+            @include transition(display);
+        }
+
+        &__clip-path {
+            height: 0;
+            width: 0;
+            opacity: 0;
+            position: absolute;
+        }
+
+        &__time {
+            position: absolute;
+            @include toRem(left, -20);
+            -webkit-clip-path: url(#timeline);
+            clip-path: url(#timeline);
+            overflow: hidden;
+            width: 20vw;
+            height: 120px*$page-home-scale;
+            padding-top: 25px*$page-home-scale;
+            font-size: 25px*$page-home-scale;
+            background-color: theme-var($color-text);
+            font-weight: 700;
+            color: #4141C1;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-top: 90px*$page-home-scale;
+
+            li {
+                position: relative;
+                text-align: start;
+                padding-left: 1rem;
+                font-size: min(25px*$page-home-scale, 15px);
+                line-height: 25px*$page-home-scale;
+                // @include toRem(font-size, 16);
+
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    @include toRem(left, -2);
+                    transform: translateY(-50%);
+                    display: block;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 100%;
+                    background-color: #ffffff;
+                }
+            }
+        }
+
+        &__rectangle {
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+            background-color: #0355CD;
+        }
+    }
+}

@@ -1,0 +1,324 @@
+//
+// ecosystem_home.scss
+//
+
+@import "../mixins";
+@import "../variables";
+@import "../placeholder";
+
+@include animation_fadeInRight();
+@include animation_rotation();
+
+.ecosystem-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 6vh;
+    @include toRem(gap, 12);
+
+    @include for-tablet-landscape-up {
+        flex-direction: row;
+    }
+
+    &__element {
+        height: 100%;
+        color: theme-var($color-text);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        opacity: 1;
+        align-items: center;
+        background: #2F293E;
+        border-radius: 16px;
+        // color: theme-var($color-surface);
+        padding: 16px*$page-home-scale;
+        @include transition(opacity);
+        animation: fadeInRight 1s ease;
+        @include toRem(gap, 20);
+
+        @include for-desktop-up {
+            padding: 26px*$page-home-scale 20px*$page-home-scale;
+        }
+
+        &__arrows {
+            svg {
+                height: 20vh;
+            }
+        }
+
+
+        &__title {
+            font-size: 4vh;
+            line-height: 5vh;
+            font-weight: 700;
+            @include transition(font-size);
+            max-width: 500px*$page-home-scale;
+            min-height: 170px*$page-home-scale;
+            display: flex;
+            align-items: center;
+            // line-height: 45px*$page-home-scale;
+
+            // @include for-desktop-up {
+            //     @include toRem(font-size, 36);
+            //     @include toRem(line-height, 45);
+            // }
+        }
+
+        &__exchange {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row-reverse;
+            @include toRem(width, 300);
+            font-size: 24px*$page-home-scale;
+
+            @include for-desktop-up {
+                @include toRem(width, 350);
+            }
+
+            div {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+
+            div:first-child {
+                flex: 3;
+                margin-right: auto;
+            }
+
+            div:last-child {
+                flex: 2;
+                margin-left: auto;
+            }
+        }
+
+        &__rectangles {
+            display: flex;
+            justify-content: space-between;
+            @include toRem(gap, 21);
+            border: 1px dashed #FFFFFF;
+            border-radius: 16px;
+            padding: 33px*$page-home-scale 50px*$page-home-scale;
+
+            div {
+                text-align: center;
+                border: 2px solid theme-var($color-surface);
+                padding: 26px*$page-home-scale 25px*$page-home-scale;
+                background: #4141C1;
+                border-radius: 8px*$page-home-scale;
+                font-size: 22px*$page-home-scale;
+                line-height: 27px*$page-home-scale;
+            }
+        }
+
+        &__funds {
+            color: theme-var($color-third);
+
+            img {
+                fill: theme-var($color-primary);
+                color: theme-var($color-primary);
+            }
+        }
+    }
+
+    &__input {
+        @include toRem(gap, 10);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        // width: 100%;
+
+        &__fund {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include toRem(gap, 10);
+            color: theme-var($color-third);
+        }
+
+        &__members {
+            background-color: theme-var($color-text);
+            color: theme-var($color-primary);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            padding: 16px*$page-home-scale 16px*$page-home-scale;
+            border-radius: 8px;
+
+            h3 {
+                @include toRem(font-size, 18);
+                @include toRem(line-height, 22);
+                text-align: center;
+                font-weight: 500;
+            }
+        }
+
+        &__exchange {
+            display: none;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px*$page-home-scale;
+            line-height: 20px*$page-home-scale;
+            // @include toRem(font-size, 18);
+            // @include toRem(line-height, 22);
+            // @include toRem(min-width, 190);
+            width: 20vw;
+            text-align: center;
+            font-weight: 500;
+            padding: 0;
+            margin: 0;
+
+            @include for-tablet-landscape-up {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &>div>svg {
+                width: 100%;
+                display: block;
+            }
+
+            div:nth-child(1) {
+                color: theme-var($color-third);
+            }
+        }
+    }
+
+    &__output {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-end;
+        @include transition(width);
+        // @include toRem(gap, 16);
+        // @include toRem(margin-left, 50);
+
+        @include for-tablet-landscape-up {
+            flex-direction: row;
+        }
+
+        &__logo {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            // @include toRem(width, 143);
+            // @include toRem(padding, 8);
+            background-color: theme-var($color-text);
+            // border-radius: 16px 16px 0px 0px;
+
+            @include for-tablet-landscape-up {
+                display: flex;
+                @include toRem(height, 143);
+                width: auto;
+                border-radius: 16px 0px 0px 16px;
+                @include toRem(padding, 16);
+            }
+
+            svg {
+                animation: rotate_all 10s linear infinite;
+            }
+        }
+
+        &__content {
+            display: flex;
+            background: linear-gradient(0deg, #261E35, #261E35), #261E35;
+            /* trắng */
+            background-image: url("/home/ecosystem_bg_img.jpeg");
+            background-position: center;
+            background-size: cover;
+            border: 2px solid #FFFFFF;
+            box-shadow: -31px 24px 47px -41px rgba(144, 255, 255, 0.62);
+            border-radius: 32px;
+
+
+            @include for-desktop-up {
+                flex-direction: row;
+            }
+
+            &__left {
+                padding: 50px*$page-home-scale 43px*$page-home-scale;
+                background-color: #261E35;
+                display: flex;
+                flex-direction: column;
+                border-bottom-left-radius: 32px;
+                border-top-left-radius: 32px;
+                @include toRem(max-width, 350);
+
+                div:nth-child(1) {
+                    padding-left: 10px;
+                }
+            }
+
+            &__right {
+                padding: 35px*$page-home-scale;
+                min-width: 600px*$page-home-scale;
+                // @include transition(min-width);
+
+                // @include for-tablet-landscape-up {
+                //     @include toRem(min-width, 600);
+                // }
+            }
+
+            &__list {
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                height: 100%;
+
+                li {
+                    position: relative;
+                    padding: 15px*$page-home-scale 21px*$page-home-scale;
+                    background: #382D4B;
+                    border-radius: 8px;
+                    text-align: start;
+                    display: flex;
+                    align-items: center;
+
+                    @include for-desktop-up {
+                        padding: 2vh 1vw;
+                    }
+
+                    span {
+                        z-index: 5;
+                        position: relative;
+                        font-size: 2vh;
+                        // @include toRem(font-size, 14);
+                        // @include toRem(line-height, 20);
+
+                        // @include for-desktop-up {
+                        //     @include toRem(font-size, 18);
+                        //     @include toRem(line-height, 22);
+                        // }
+                    }
+
+                    &:hover {
+                        /* hong line */
+                        background: linear-gradient(89.94deg, #ED05C7 0.03%, #333399 99.8%);
+
+                        .ecosystem-home__bg--blur {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__bg {
+        &--blur {
+            top: 0;
+            left: 0;
+            z-index: 1;
+            position: absolute;
+            background: linear-gradient(89.94deg, #ED05C7 0.03%, #333399 99.8%);
+            filter: blur(12.5px);
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+            display: none;
+            @include transition(display);
+        }
+    }
+}

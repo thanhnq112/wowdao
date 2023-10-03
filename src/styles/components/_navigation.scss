@@ -1,0 +1,16 @@
+//
+// navigation.scss
+//
+
+@import "../mixins";
+@import "../global";
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    @include toRem(gap, 20);
+
+    &--prev, &--next {
+        cursor: pointer;
+    }   
+}

@@ -1,0 +1,74 @@
+//
+// start_exploring_mobile.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+.start-exploring-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 700;
+    @include toRem(font-size, 16);
+    @include toRem(line-height, 20);
+    @include toRem(height, 50);
+    width: 100vw;
+    @include toRem(margin-left, 12);
+    @include toRem(margin-right, 12);
+    @include toRem(padding-right, 24);
+
+
+    @include for-desktop-up {
+        padding: 0.9rem 1.5rem;
+    }
+
+    @include transition(background-color);
+
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include toRem(height, 50);
+        @include toRem(min-width, 152);
+        @include toRem(padding-left, 24);
+        @include toRem(padding-right, 24);
+        text-align: center;
+        white-space: nowrap;
+        background: linear-gradient(90deg, #FE91EC 0%, #3838FF 100%);
+        @include toRem(border-radius, 36);
+        z-index: 100;
+
+
+        &__context {
+            @include toRem(font-size, 16);
+            @include toRem(line-height, 21);
+            font-weight: 700;
+            @include toRem(margin-right, 10);
+            font-family: var(--quicksand-font);
+        }
+
+        &__text {
+            @include toRem(font-size, 16);
+            font-weight: 700;
+            font-family: var(--quicksand-font);
+            @include toRem(height, 50);
+            display: flex;
+            align-items: center;
+            color: #4141C1;
+        }
+    }
+
+    &__icon {
+        @include toRem(margin-top, 4);
+        color: white;
+
+    }
+
+    &__nav {
+        @include toRem(height, 50);
+        display: flex;
+        align-items: center;
+    }
+}

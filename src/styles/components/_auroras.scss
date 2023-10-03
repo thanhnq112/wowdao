@@ -1,0 +1,45 @@
+//
+// auroras.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+.auroras {
+    // width: 100%;
+    // height: 100%;
+
+    &--right {
+        position: absolute;
+        @include toRem(right, -261);
+        @include toRem(top, 20);
+        mix-blend-mode: color-dodge;
+        filter: blur(50px);
+        transform: matrix(0.82, -0.58, -0.58, -0.82, 0, 0);
+    }
+
+    &--left {
+        position: absolute;
+        @include toRem(left, -148);
+        @include toRem(top, -56);
+        mix-blend-mode: color-dodge;
+        filter: blur(50px);
+    }
+
+    &--top {
+        position: absolute;
+        @include toRem(left, 60);
+        @include toRem(top, -824);
+        mix-blend-mode: color-dodge;
+        filter: blur(50px);
+        transform: matrix(0.82, -0.58, -0.58, -0.82, 0, 0);
+    }
+
+    &--bottom {
+        position: absolute;
+        @include toRem(left, 792);
+        @include toRem(top, 544);
+        mix-blend-mode: color-dodge;
+        filter: blur(50px);
+    }
+}

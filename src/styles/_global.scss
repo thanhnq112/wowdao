@@ -1,0 +1,57 @@
+//
+// global.scss
+//
+
+@import "mixins";
+@import "variables";
+
+:root {
+  font-family: var(--quicksand-font);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body, #container, #pc, #__next, main {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  color: theme-var($color-text);
+  cursor: url('/mouse.svg'), auto;
+}
+
+.center-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+// }

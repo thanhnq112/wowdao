@@ -1,0 +1,49 @@
+//
+// pagination.scss
+//
+
+@import "../mixins";
+@import "../global";
+
+.pagination-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    @include toRem(right, 20);
+    position: fixed;
+    z-index: 10;
+
+    &__element {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include toRem(width, 18);
+            @include toRem(height, 18);
+            background-color: $color-text;
+            border-radius: 100%;
+            @include transition(background-color);
+
+            &--active {
+                @include toRem(width, 12);
+                @include toRem(height, 12);
+                background-color: $color-surface;
+                border-radius: 100%;
+            }
+        }
+
+        &__line {
+            @include toRem(width, 4);
+            @include toRem(height, 27);
+            background-color: $color-text;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+//
+// layout.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+.layout {
+    box-sizing: border-box;
+}
+
+.slide-layout {
+    width: 97vw;
+    margin-top: $slide-margin-top;
+    margin-bottom: $slide-margin-top;
+    height: $slide-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include for-phone-only {
+        width: auto;
+    }
+}

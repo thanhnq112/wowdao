@@ -1,0 +1,96 @@
+@use "sass:math";
+
+// Variables
+
+// scss-docs-start global-variables - Default light
+$color-primary: --color-primary;
+$color-foreground: --color-foreground;
+$color-secondary: --color-secondary;
+$color-third: --color-third;
+$color-surface: --color-surface;
+$color-text: --color-text;
+
+$theme-map-dark: (
+    $color-primary: #E800E3,
+    $color-secondary: #38079A,
+    $color-foreground: #000000,
+    $color-third: #96E9FF,
+    $color-surface: #5256B6,
+    $color-text: #ffffff,
+);
+
+$theme-map-light: (
+    $color-primary: #E800E3,
+    $color-foreground: #ffffff,
+    $color-secondary: #38079A,
+    $color-third: #96E9FF,
+    $color-surface: #5256B6,
+    $color-text: #000000
+);
+
+$nb_page_home_slides: 12;
+$body-width-at-figma: 1728px;
+$body-height-at-figma: 1117px;
+$scale: 1;
+
+// scss-docs-start layout-variables
+$body-margin-top: 0vh;
+$body-margin-bottom: 2vh;
+$body-margin-left: 1.5vw;
+$body-margin-right: 1.5vw;
+$body-width: 97vw;
+$topbar-height: 8vh;
+$footer-height: 6vh;
+$slide-margin-top: 9vh;
+$slide-height-at-figma-at-pixels: 1039px;
+$slide-height: calc(100vh - 9vh);
+$page-home-scale: calc(100vmin/$body-height-at-figma);
+// end docs
+
+
+// scss-docs-start btn-variables
+$btn-link-color: theme-var($color-text);
+$btn-link-hover-color: theme-var($color-third);
+$btn-link-border-color: theme-var($color-text);
+$btn-link-radius: 8px;
+
+$btn-solid-color: theme-var($color-text);
+$btn-solid-color-text: theme-var($color-secondary);
+$btn-solid-hover-color: theme-var($color-surface);
+$btn-solid-hover-color-text: theme-var($color-text);
+
+$btn-navigation-color: theme-var($color-surface);
+
+// end btn-variables
+
+
+// Navigation-variables 
+$navigation-bg-color: theme-var($color-text);
+$navigation-bg-color-text: theme-var($color-foreground);
+
+// scss-docs-start footer-variables
+$footer-bg-color: theme-var($color-text);
+$footer-border-radius: 92px;
+$footer-text-color: theme-var($color-text);
+// end footer-variables
+
+// scss-docs-start text-variables 
+$color-slogan-text: theme-var($color-third);
+// end text-variables
+
+// scss-docs-start dropdown-variables
+$color-dropdown-list: #2D2D2D;
+$color-dropdown-list-hover: #887DF7;
+$dropdown-list-bg: theme-var($color-text);
+// end dropdown-variales 
+
+// scss-docs-start member-slides-variables
+$color-text-region: theme-var($color-foreground);
+$color-member-slide-btn: #1C1E23;
+$color-member-slide-text: #000000;
+$color-member-slide-btn-hover: #FFC86A;
+// end 
+
+// scss-docs-start slide-9-page-home;
+$page-home-slide-9-main-color: #161B22;
+$page-home-slide-9-border-color: #30363D;

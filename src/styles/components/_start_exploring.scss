@@ -1,0 +1,55 @@
+//
+// start_exploring.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+.start-exploring {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include toRem(gap, 10);
+    font-weight: 700;
+    @include toRem(font-size, 16);
+    @include toRem(line-height, 20);
+    // position: relative;
+    // position: fixed;
+    cursor: pointer;
+    // @include toRem(width, 200);
+    padding: 0.9rem 1rem;
+    background: linear-gradient(89.94deg, #ED05C7 0.03%, #333399 99.8%);
+    border-radius: 36px;
+
+
+    @include for-desktop-up {
+        padding: 0.9rem 1.5rem;
+    }
+
+
+    @include transition(background-color);
+
+    // &--gradient {
+    //     background: linear-gradient(90.69deg, #E800E3 -25.88%, #38079A 45.94%, #83E6FF 114.83%);
+    // }
+
+    &:hover {
+        background: linear-gradient(90.69deg, #E800E3 -25.88%, #38079A 45.94%, #83E6FF 114.83%);
+    }
+
+    &__button {
+        // order: 2;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+        @include toRem(font-size, 16);
+        @include toRem(line-height, 20);
+        font-weight: 700;
+    }
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

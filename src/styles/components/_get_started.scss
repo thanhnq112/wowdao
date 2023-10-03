@@ -1,0 +1,64 @@
+//
+// get_started.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+@keyframes reducePadding {
+    from {padding: 15px;}
+    to {padding: 9px;} 
+};
+
+.get-started {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @include toRem(margin-top, 52);
+    animation: reducePadding 0.5s linear 2s infinite alternate;
+    cursor: pointer;
+
+    &:hover {
+        svg {
+            color: theme-var($color-third);
+        }
+    }
+
+    &__button {
+        background-color: $btn-solid-color;
+        color: $btn-solid-color-text;
+        padding: 1.1875rem 5.875rem;
+        border-radius: $btn-link-radius;
+        mix-blend-mode: normal;
+        font-weight: 700;
+        z-index: 10;
+        @include transition(background-color);
+        @include transition(color);
+        @include toRem(font-size, 20);
+        @include toRem(line-height, 25);
+
+        &:hover {
+            background: linear-gradient(90.69deg, #E800E3 -25.88%, #38079A 45.94%, #83E6FF 114.83%);
+            // background-color: $btn-solid-hover-color;
+            color: $btn-solid-hover-color-text;
+        }
+    }
+}
+
+.border {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &--left, &--right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

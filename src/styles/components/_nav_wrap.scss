@@ -1,0 +1,185 @@
+//
+// nav_wrap.scss
+//
+
+@import "../mixins";
+@import "../variables";
+
+.nav-wrap {
+    order: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    @include toRem(margin-right, 17);
+    background-color: $dropdown-list-bg;
+    @include toRem(padding-top, 30);
+    color: $color-dropdown-list;
+    border-radius: 16px;
+
+    @include for-tablet-landscape-up {
+        display: flex;
+        padding-top: 0;
+        background-color: transparent;
+        color: #ffffff;
+        flex-direction: row;
+        @include toRem(gap, 24);
+        @include toRem(min-width, 393);
+    }
+
+    &--open {
+        display: flex;
+    }
+
+    &__gap {
+        @include toRem(width, 20);
+        @include toRem(height, 100);
+        position: absolute;
+        @include toRem(top, -30);
+        @include toRem(right, 390);
+    }
+
+    &__split {
+        width: 100%;
+        display: flex;
+        @include toRem(gap, 0);
+        border-top: 1px solid $color-dropdown-list;
+
+        @include for-desktop-up {
+            width: auto;
+            @include toRem(gap, 15);
+            border: none;
+        }
+
+        .nav-wrap__item {
+            flex: 1;
+            padding: 1.25rem 0;
+            @include toRem(min-width, 195);
+
+            @include for-desktop-up {
+                min-width: auto;
+                padding: 0;
+                display: flex;
+                white-space: nowrap;
+            }
+
+            &:first-child {
+                border-right: 1px solid #000000;
+            }
+
+            &__second-title {
+                text-align: center;
+            }
+        }
+    }
+
+    &__hamburger {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        cursor: pointer;
+
+        &__toggle-list {
+            padding: 0.75rem 1rem;
+            display: flex;
+            flex-direction: column;
+            @include toRem(gap, 12);
+            position: absolute;
+            top: 3rem;
+            right: 0;
+            @include toRem(border-radius, 10);
+            background-color: $color-dropdown-list;
+
+            .nav-wrap__item {
+                white-space: nowrap;
+            }
+        }
+
+        &__btn {
+            font-size: 10px;
+            @include toRem(height, 50);
+
+            svg {
+                @include toRem(width, 50);
+                @include toRem(height, 50);
+            }
+        }
+    }
+
+    &__item:nth-child(6) {
+        @include toRem(margin-bottom, 25);
+
+        @include for-tablet-landscape-up {
+            @include toRem(margin-bottom, 0);
+        }
+    }
+
+    &__item {
+        @include toRem(min-width, 300);
+        @include toRem(height, 52);
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include for-tablet-landscape-up {
+            min-width: auto;
+        }
+
+        &--hidden {
+            display: none;
+        }
+
+        &:hover {
+            color: $btn-link-hover-color;
+
+            svg {
+                fill: $btn-link-hover-color;
+            }
+        }
+
+        &__first-title {
+            // font-size: 14px*$page-home-scale;
+            @include toRem(font-size, 14);
+            @include toRem(line-height, 18);
+            letter-spacing: -0.08;
+            font-weight: 400;
+        }
+
+        &__second-title {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include toRem(gap, 5);
+            // white-space: nowrap;
+            font-weight: 500;
+             font-size: 20px*$page-home-scale;
+            // @include toRem(font-size, 18);
+            @include toRem(line-height, 22);
+
+            // @include for-tablet-landscape-up {
+            //     padding: 1rem 0rem;
+            //     @include toRem(font-size, 13);
+            //     @include toRem(line-height, 20);
+            // }
+
+            @include for-desktop-up {
+                @include toRem(font-size, 16);
+                @include toRem(line-height, 20);
+            }
+
+            @include for-big-desktop-up {
+                @include toRem(font-size, 18);
+                @include toRem(line-height, 20);
+            }
+        }
+
+        // &__dropdown {
+
+        // }
+    }
+}

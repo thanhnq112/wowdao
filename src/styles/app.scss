@@ -1,0 +1,29 @@
+@import "global";
+@import "themes";
+@import "pages/home";
+@import "structure/footer";
+@import "structure/header";
+@import "structure/layout";
+@import "structure/topbar";
+
+//Import component styles
+@import "components/nav_wrap";
+@import "components/sub_list";
+@import "components/start_exploring";
+@import "components/start_exploring_mobile";
+@import "components/custom_particles";
+@import "components/hero_banner";
+@import "components/get_started";
+@import "components/auroras";
+@import "components/slide";
+@import "components/navigation";
+@import "components/pagination_slide";
+@import "components/ecosystem_home";
+@import "components/member_slide";
+@import "components/dropdow_list";
+@import "components/navbar_hamburger";
+@import "components/timeline_home";
+@import "components/timeline_horizontal";
+
+// Import font family
+// @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
