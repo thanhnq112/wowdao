@@ -99,28 +99,52 @@
         }
     }
 
-    &__mobileBtn {
-        display: none;
+    @include for-phone-only {
         position: fixed;
+        width: 100vw;
+        // height: 10vh;
+        height: 12%;
         bottom: 0;
-        left: 0;
-        height: 73px;
-        width: calc(100vw - 40px);
-        border-radius: 40px;
-        margin: 0 20px 26px 20px;
-        justify-content: left;
-        align-items: center;
-        text-align: center;
-        background-color: white;
+        // background-color: orange;
+        // opacity: 0.5;
+        // padding-left: 5px;
+        // padding-right: 5px;
+        z-index: 10;
     }
 
+    &__mobileBtn {
+        display: none;
 
-    @include for-phone-only {
-        &__mobileBtn {
+        @include for-phone-only {
             display: flex;
+            // margin: 0 20px 26px 20px;
+            // margin-left: 5px;
+            // margin-right: 5px;
+            // padding-left: 5px;
+            // padding-right: 5px;
+            @include toRem(border-radius, 40);
+            // border-radius: 40px;
+            border: 2px #383467 solid;
+            // padding: auto;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            // position: absolute;
+            position: absolute;
+            width: 95%;
+            height: 90%;
+            // padding-top: 8px;
+            // padding-bottom: 8px;
+            // top: 50%;
+            // transform: translateY(-50%);
+            left: 50%;
+            transform: translateX(-50%);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: white;
         }
-
-        // display: none;
     }
 
 }

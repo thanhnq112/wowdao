@@ -133,6 +133,14 @@
         align-items: center;
         position: relative;
 
+        @include for-phone-only {
+            // background-color: green;
+            width: 100vw;
+            height: 100%;
+            top: 0;
+
+        }
+
         &__bg {
             width: 100vw;
             height: 100%;
@@ -153,8 +161,13 @@
             align-items: center;
 
             @include for-phone-only {
-                width: 170vw;
-                height: 83vh;
+                // width: 170vw;
+                // background-color: red;
+                position: absolute;
+                top: 0;
+                // width: 250%;
+                height: 60%;
+                // display: none;
             }
 
             video {
@@ -164,7 +177,28 @@
                 transform: translate(-50%, -50%);
 
                 @include for-phone-only {
-                    top: 38%;
+                    // opacity: 0.5;
+                    display: block;
+
+                    // position: relative;
+                    // top: 0;
+                    width: 150%;
+                    height: 150%;
+                    // width: 100%;
+                    // height: 100%;
+                    // overflow: hidden;
+                    // transform: scale(1.2);
+                    // scale: 1.2;
+                    // top: 50%;
+                    // left: 50%;
+                    // transform: translate(-50%, -50%);
+                    // width: 120%;
+                    // height: 120%;
+                    // overflow: hidden;
+                    // background-color: red;
+                    // top: 38%;
+                    // top: 0;
+                    // display: none;
                 }
 
             }
@@ -177,6 +211,11 @@
                 width: 100%;
                 height: 100%;
 
+                // @include for-phone-only {
+                //     width: auto;
+                //     height: auto;
+                // }
+
                 img {
                     position: absolute;
                     top: 50%;
@@ -184,10 +223,15 @@
                     animation: rotate_all 60s linear infinite;
 
                     @include for-phone-only {
-                        width: 950px;
-                        height: 615px;
-                        top: 38%;
-                        transform: scale(0.2);
+                        // width: 950px;
+                        // height: 615px;
+                        display: block;
+                        width: auto;
+                        height: 130%;
+                        // top: 38%;
+                        // top: 30%;
+                        // transform: scale(1);
+                        z-index: 1;
                         // left: 25%;
                     }
                 }
@@ -202,7 +246,17 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+
+            @include for-phone-only {
+                position: absolute;
+                width: 100%;
+                height: 40%;
+                bottom: 0;
+                // background-color: green;
+            }
         }
+
+
 
         &__title {
             position: absolute;
@@ -239,18 +293,30 @@
                 // -webkit-text-stroke: 2px #fff;
 
                 @include for-phone-only {
-                    margin: 10px 0;
+                    // margin: 10px 0;
                 }
             }
 
             @include for-phone-only {
-                display: grid;
-                height: 148px;
+                display: flex;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+                justify-content: center;
+                bottom: 0;
+                // height: 148px;
                 // bottom: 0;
-                margin-bottom: 0;
-                @include toRem(bottom, 90);
+                // margin-bottom: 0;
+                // @include toRem(bottom, 90);
+
                 // @include toRem(bottom, 120);
                 // bottom: 120px;
+                // @include for-phone-only {
+                //     position: absolute;
+                //     width: 100%;
+                //     height: 40%;
+                //     background-color: green;
+                // }
 
                 &__text {
                     // font-size: 36px;

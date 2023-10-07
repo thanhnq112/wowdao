@@ -19,6 +19,18 @@
     align-items: center;
 
     @include for-phone-only {
+        display: block;
+        // justify-content: center;
+        // align-items: center;
         width: auto;
+        // margin: 0;
+        height: 80%;
+        // @include toRem(margin-top, 57);
+        margin-top: 0;
+        margin-bottom: 0;
+        position: absolute;
+        top: 8%;
+        // background-color: pink;
+        // opacity: 0.5;
     }
 }
