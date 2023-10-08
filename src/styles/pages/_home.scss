@@ -270,9 +270,9 @@
             white-space: nowrap;
 
 
-            &__text {
-                // font-family: var(--quicksand-font);
-            }
+            // &__text {
+            //     // font-family: var(--quicksand-font);
+            // }
 
             &__dao {
                 background-image: url("/home/bg_text.png");
@@ -455,12 +455,17 @@
 
         @include for-phone-only {
             background: none;
-            height: calc((100% - 25vh));
-            // height: 500px;
-            padding: 0;
-            @include toRem(max-height, 600);
 
-            // box-sizing: none;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100%;
+            max-height: none;
+            top: 0;
+            padding: 0;
+            margin: 0;
         }
 
         &__title {
@@ -519,28 +524,17 @@
             display: none;
 
             @include for-phone-only {
+                position: absolute;
                 width: 100vw;
-                height: 100vh;
-                margin: 0 20px;
-                position: relative;
-                // background-color: green;
-                // @include toRem(max-width, 400);
-                display: flex;
+                height: 90%;
+
+                display: block;
                 @include transition(max-height);
                 @include transition(height);
-                // @include toRem(max-height, 400);
-                // max-height: none;
             }
 
             img {
                 object-fit: contain;
-                // @include toRem(padding-left, calc())
-                // padding: 0 20px;
-                // padding-left: calc();
-                // height: 100vh;
-                // padding: 0 24px*$page-home-scale;
-                // position: absolute;
-                // width: 100vw;
             }
         }
     }
