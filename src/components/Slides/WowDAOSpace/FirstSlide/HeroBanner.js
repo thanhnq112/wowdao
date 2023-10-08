@@ -6,7 +6,10 @@ export default function HeroBanner() {
         <div className="hero-banner">
             <div className="hero-banner__content">
                 <div className="hero-banner__content__text">
-                    WowDAO
+                    <span>
+                        WowDAO
+
+                    </span>
                 </div>
                 <div className="hero-banner__content__effect">
                     <div className="hero-banner__content__camera">
