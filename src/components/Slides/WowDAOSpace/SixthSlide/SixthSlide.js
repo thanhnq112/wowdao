@@ -46,17 +46,41 @@ export const timelineRoadmap = [
 ]
 
 export default function SixthSlide() {
+
+    const handleOnClick = (e) => {
+        const classComponent = 'timeline-home__component__mobile__'
+        const dropdown = e.target.children[1]
+        const content = e.target.parentNode.children[1]
+        // timeline-home__component__mobile__content__active
+        // timeline-home__component__mobile__time__dropdown__active
+        if (dropdown.classList.contains(classComponent + 'time__dropdown__active')) {
+            dropdown.classList.remove(classComponent + 'time__dropdown__active')
+            content.classList.remove(classComponent + 'content__active')
+        }
+        else {
+            const dropdownAll = document.querySelectorAll('.' + classComponent + 'time__dropdown')
+            const contentAll = document.querySelectorAll('.' + classComponent + 'content')
+            dropdownAll.forEach((e) => e.classList.remove(classComponent + 'time__dropdown__active'))
+            contentAll.forEach((e) => e.classList.remove(classComponent + 'content__active'))
+            dropdown.classList.add(classComponent + 'time__dropdown__active')
+            content.classList.add(classComponent + 'content__active')
+        }
+    }
+
     return (
         <div>
             <SlideLayout>
                 <div className="timeline-home">
-                    <SlideTitle />
+                    <div className="timeline-home__slideTitle">
+                        <SlideTitle />
+
+                    </div>
                     <div className="timeline-home__inner">
                         <div className="timeline-home__line">
                             <div></div>
                             <div></div>
                         </div>
-                        <div className="timeline-home__timelines">
+                        <div className="timeline-home__timelines" onClick={handleOnClick}>
                             {timelineRoadmap.map((e) => (
                                 <TimelineComponent
                                     key={e.id}

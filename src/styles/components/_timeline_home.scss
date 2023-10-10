@@ -8,12 +8,37 @@
 .timeline-home {
     // margin-top: min(18vh, 200px);
 
+    @include for-phone-only {
+        position: relative;
+        width: 100vw;
+        height: 100%;
+        top: 0;
+        // background-color: green;
+    }
+
+    &__slideTitle {
+        @include for-phone-only {
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            top: 0;
+            // background-color: red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
     .page-home__title {
         margin-bottom: 0;
     }
 
     &__title {
         margin-bottom: 50px*$page-home-scale;
+
+        @include for-phone-only {
+            margin-bottom: 0;
+        }
     }
 
     &__line {
@@ -38,10 +63,23 @@
             filter: blur(12px);
             height: 1px;
         }
+
+        @include for-phone-only {
+            display: none;
+        }
     }
 
     &__inner {
         position: relative;
+
+        @include for-phone-only {
+            position: absolute;
+            width: 100%;
+            height: 80%;
+            top: 20%;
+            // background-color: orange;
+        }
+
         // height: 65vh;
     }
 
@@ -62,6 +100,17 @@
             @include toRem(gap, 70);
         }
 
+        @include for-phone-only {
+            // display: none;
+            top: 0;
+            flex-direction: column;
+            margin: 0;
+            justify-content: flex-start;
+            // background-color: #0355CD;
+            height: 100%;
+            gap: 0;
+        }
+
 
     }
 
@@ -71,6 +120,123 @@
         justify-content: flex-start;
         align-items: center;
 
+        @include for-phone-only {
+            display: flex;
+            // height: 100%;
+        }
+
+        &__pc {
+            @include for-phone-only {
+                display: none;
+            }
+        }
+
+        &__mobile {
+            display: none;
+
+            @include for-phone-only {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                // position: absolute;
+                // background-color: green;
+                width: 100%;
+
+            }
+
+
+
+            &__time {
+                width: 88%;
+                min-height: 60px;
+                display: flex;
+                justify-content: space-between;
+                background-color: theme-var($color-text);
+                padding-left: 5px;
+                padding-right: 10px;
+                align-items: center;
+                border-radius: 8px;
+                margin-top: 10px;
+                transition: all 0.2s linear;
+
+
+
+
+                &__text {
+                    font-weight: 700;
+                    color: #4141C1;
+                }
+
+                &__dropdown {
+                    transform: rotate(90deg);
+                    transition: all 0.2s linear;
+
+                    &__active {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+
+            @keyframes fadeInFromNone {
+                0% {
+                    display: none;
+                    opacity: 0;
+                }
+
+                1% {
+                    display: flex;
+                    opacity: 0;
+                }
+
+                100% {
+                    display: flex;
+                    opacity: 1;
+                }
+            }
+
+            &__content {
+                // background-color: red;
+                background: linear-gradient(179deg, rgba(240.12, 240.12, 240.12, 0.19) 0%, rgba(255, 255, 255, 0.15) 100%);
+                border-radius: 0% 0% 20px 20px;
+                width: 82%;
+                padding: 8px;
+                min-height: 80px;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: auto;
+                // visibility: hidden;
+                display: none;
+                opacity: 0;
+
+
+                li {
+                    margin: 4px 0;
+                }
+
+                &__active {
+                    display: flex;
+                    opacity: 1;
+                    // visibility: visible;
+                    // min-height: 80px;
+                    animation: fadeInFromNone 0.2s ease-in-out;
+                    // transition: all 2s linear;
+                }
+            }
+        }
+
+        // @include for-phone-only {
+        //     // position: absolute;
+        //     width: 100%;
+        //     // height: 400px;
+        //     // min-height: 140px*$page-home-scale;
+        //     background-color: green;
+        //     height: fit-content;
+
+        // }
+
         &__circle {
             visibility: hidden;
             width: 14px*$page-home-scale;
@@ -79,14 +245,22 @@
             // @include toRem(height, 14);
             border-radius: 100%;
             background-color: #96E9FF;
+
+            @include for-phone-only {
+                display: none;
+            }
         }
 
         &__line {
             visibility: hidden;
-            // margin:auto;
+            margin: auto;
             @include toRem(width, 4);
             @include toRem(min-height, 50);
             background-color: #96E9FF;
+
+            @include for-phone-only {
+                display: none;
+            }
         }
 
         &__decoration {
@@ -110,8 +284,30 @@
 
                 .timeline-component__bg {
                     display: block;
+
+                    @include for-phone-only {
+                        display: none;
+                    }
                 }
+
+                // @include for-phone-only {
+                //     border: none;
+                //     display: flex;
+                //     // align-items: center;
+                //     justify-content: center;
+
+                // }
             }
+
+            // @include for-phone-only {
+            //     padding: 0;
+            //     position: absolute;
+            //     width: 86%;
+            //     border: none;
+            //     border-radius: 0;
+            //     min-height: 0;
+            //     background: none;
+            // }
         }
 
         &__bg {
@@ -149,11 +345,54 @@
             background-color: theme-var($color-text);
             font-weight: 700;
             color: #4141C1;
+
+            &__dropdown {
+                display: none;
+            }
+
+            // @include for-phone-only {
+            //     width: 106%;
+            //     // width: 100vw;
+            //     left: -3%;
+            //     clip-path: none;
+            //     padding-top: 0;
+            //     padding-left: 1vh;
+            //     padding-right: 2vh;
+            //     @include toRem(min-height, 60);
+            //     @include toRem(padding-top, 10);
+            //     @include toRem(padding-bottom, 10);
+            //     // @include toRem(border-radius, 3);
+
+            //     border-radius: 5px;
+            //     border: 2px #4141C1 solid;
+            //     // background-color: green;
+            //     display: flex;
+            //     justify-content: space-between;
+            //     // margin: 0 20px;
+            //     align-items: center;
+
+            //     &__text {
+            //         font-size: 46px*$page-home-scale;
+
+            //     }
+
+            //     &__dropdown {
+            //         display: block;
+            //         transform: rotate(90deg);
+
+            //     }
+            // }
         }
 
         ul {
             list-style-type: none;
             margin-top: 90px*$page-home-scale;
+
+            @include for-phone-only {
+                // position: absolute;
+                margin-top: 0;
+                // display: none;
+            }
 
             li {
                 position: relative;
@@ -163,6 +402,11 @@
                 line-height: 25px*$page-home-scale;
                 // @include toRem(font-size, 16);
 
+                @include for-phone-only {
+                    font-size: 30px*$page-home-scale;
+                    line-height: 30px*$page-home-scale;
+                }
+
                 &::before {
                     position: absolute;
                     top: 50%;
@@ -170,12 +414,20 @@
                     transform: translateY(-50%);
                     display: block;
                     content: "";
-                    width: 10px;
-                    height: 10px;
+                    width: 5px;
+                    height: 5px;
                     border-radius: 100%;
                     background-color: #ffffff;
                 }
             }
+        }
+
+        &__content {
+            display: none;
+
+            // @include for-phone-only {
+            //     display: block;
+            // }
         }
 
         &__rectangle {
