@@ -303,7 +303,8 @@
                     background-clip: text;
                     font-weight: 900;
                     -webkit-text-fill-color: transparent;
-                    left: 0%;
+                    left: 0;
+                    top: 0;
                 }
 
                 @include for-phone-only {
