@@ -9,6 +9,12 @@
     // width: 100%;
     // height: 100%;
 
+    opacity: 0.3;
+
+    @include for-phone-only {
+        display: none;
+    }
+
     &--right {
         position: absolute;
         @include toRem(right, -261);
