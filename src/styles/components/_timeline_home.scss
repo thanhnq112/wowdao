@@ -237,10 +237,18 @@
 
         // }
 
+        &__pc {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
         &__circle {
             visibility: hidden;
             width: 14px*$page-home-scale;
             height: 14px*$page-home-scale;
+            // justify-content: center;
             // @include toRem(width, 14);
             // @include toRem(height, 14);
             border-radius: 100%;
