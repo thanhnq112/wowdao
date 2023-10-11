@@ -242,6 +242,10 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+
+            @include for-phone-only {
+                display: none;
+            }
         }
 
         &__circle {
