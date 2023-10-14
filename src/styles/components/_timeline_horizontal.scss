@@ -7,6 +7,11 @@
     height: 100%;
     flex: 1;
 
+    @include for-phone-only {
+        // display: flex;
+        flex-direction: column;
+    }
+
     &__element {
         list-style: none;
         text-align: start;
@@ -20,6 +25,15 @@
         font-size: max(15px*$page-home-scale, 14px);
         line-height: max(20px*$page-home-scale, 20px);
 
+        @include for-phone-only {
+            // float: inline-start;
+            flex-direction: row;
+            width: 100% !important;
+
+        }
+
+
+
         &::after {
             position: absolute;
             top: 60px*$page-home-scale;
@@ -30,6 +44,10 @@
             display: block;
             background-color: #FFFFFF;
             z-index: -1;
+
+            @include for-phone-only {
+                display: none;
+            }
         }
 
         &:last-child::after {
@@ -42,15 +60,45 @@
             position: absolute;
             top: 60px*$page-home-scale;
             transform: translateY(-50%);
+
+            @include for-phone-only {
+                display: none;
+            }
         }
 
         &__step {
             height: 20px*$page-home-scale;
+
+            @include for-phone-only {
+                // height: auto;
+                display: none;
+            }
         }
 
         &__value {
             width: 90%;
             margin-top: 60px*$page-home-scale;
+
+            @include for-phone-only {
+                // margin-top: 0;
+                // width: auto;
+                display: none;
+            }
+        }
+
+        &__mobile {
+            display: none;
+
+            @include for-phone-only {
+                display: block;
+                font-size: max(15px*$page-home-scale, 14px);
+                @include toRem(margin-top, 3);
+                @include toRem(margin-bottom, 3);
+
+                &>span {
+                    font-weight: bold;
+                }
+            }
         }
     }
 }

@@ -36,6 +36,14 @@ export const investors_timeline = [
     {
         id: 3,
         value: "Easily trade NFTs to transfer the ownership and earn profit at anytime"
+    },
+    {
+        id: 4,
+        // value: "Easily trade NFTs to transfer the ownership and earn profit at anytime"
+    },
+    {
+        id: 5,
+        // value: "Easily trade NFTs to transfer the ownership and earn profit at anytime"
     }
 ]
 
@@ -43,14 +51,44 @@ export default function NinthSlide() {
     return (
         <SlideLayout>
             <div className="page-home__slide-9">
+                <div className="page-home__slide-9__title">
+                    <div className="page-home__slide-9__title__content">Crowdfunding platform for AI startups</div>
+                </div>
                 <div className="page-home__slide-9__inner">
-                    <div className="page-home__slide-9__bg"></div>
+                    {/* <div className="page-home__slide-9__bg"></div> */}
 
-                    <div className="page-home__slide-9__ai-startup">
-                        <h1>01. For AI startups</h1>
+                    <div className="page-home__slide-9__process">
+                        <div className="page-home__slide-9__process__title">
+                            <div className="page-home__slide-9__process__title__number">01.</div>
+                            <div className="page-home__slide-9__process__title__main">For AI startups</div>
+                        </div>
                         <TimelineHorizontal timelines={ai_startups_timeline} />
                     </div>
-                    <div className="page-home__slide-9__investors">
+
+                    <div className="page-home__slide-9__process">
+                        <div className="page-home__slide-9__process__title">
+                            <div className="page-home__slide-9__process__title__number">02.</div>
+                            <div className="page-home__slide-9__process__title__main">For investors</div>
+                            <div className="page-home__slide-9__process__title__description">Invest in top AI startups vested by the AI community</div>
+                        </div>
+                        <TimelineHorizontal timelines={investors_timeline} />
+                    </div>
+
+                    {/* <div className="page-home__slide-9__ai-startup">
+                        <h1>01. <br />For AI startups</h1>
+                        <TimelineHorizontal timelines={ai_startups_timeline} />
+                    </div>
+
+                    <div className="page-home__slide-9__ai-startup">
+                        <div>
+                            <h1>02. <br />For investors</h1>
+                            <p>
+                                Invest in top AI startups vested by the AI community
+                            </p>
+                        </div>
+                        <TimelineHorizontal timelines={investors_timeline} />
+                    </div> */}
+                    {/* <div className="page-home__slide-9__investors">
                         <div>
                             <strong> Crowdfunding platform
                                 for AI startups</strong>
@@ -64,7 +102,7 @@ export default function NinthSlide() {
                             </div>
                             <TimelineHorizontal timelines={investors_timeline} />
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
 

@@ -973,9 +973,54 @@
     }
 
     &__slide-9 {
-        // position: relative;
+        position: relative;
         width: 100%;
         height: 100%;
+
+        &__title {
+            @include toRem(font-size, 30);
+            @include toRem(line-height, 35);
+            font-weight: 700;
+            margin-top: 100px*$page-home-scale;
+            ;
+            margin-bottom: 80px*$page-home-scale;
+            ;
+            // @include toRem(margin-top, 50);
+            // @include toRem(margin-bottom, 30);
+            // background-color: pink;
+            position: relative;
+            // height: 30%;
+            // margin-bottom: 0;
+            // margin: 20px 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            @include for-phone-only {
+                // @include toRem(font-size, 30);
+                height: 20%;
+                margin-bottom: 0;
+                margin-top: 0;
+                // background-color: pink;
+
+                &__content {
+                    // display: flex;
+                    // position: relative;
+                    // left: 0;
+
+                    // word-wrap: break-word;
+                    // height: 100%;
+                    width: 90%;
+                    @include toRem(font-size, 24);
+                    @include toRem(margin-left, 10);
+                    @include toRem(margin-right, 10);
+
+                }
+            }
+        }
 
         &__bg {
             z-index: -1;
@@ -993,20 +1038,113 @@
 
         &__inner {
             position: relative;
-            top: 9vh;
-            padding: 4vh 2vw;
+            // top: 9vh;
+            // padding: 4vh 2vw;
+            margin: 4vh 2vw;
+            height: 70%;
+            background-color: $page-home-slide-9-main-color;
+            border: 1px solid $page-home-slide-9-border-color;
+            border-radius: 16px;
+            padding: 65px*$page-home-scale 65px*$page-home-scale;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            @include for-phone-only {
+                height: 80%;
+                margin: 0;
+                padding: 0 50px*$page-home-scale;
+                border: none;
+                border-radius: 0;
+                justify-content: space-evenly;
+                align-items: center;
+                background-color: transparent;
+
+            }
+
         }
 
+        &__process {
+            display: flex;
+            margin-bottom: 40px*$page-home-scale;
+
+            @include for-phone-only {
+                // @include toRem(margin-bottom, 20);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+            }
+
+            &__title {
+                position: relative;
+                width: 30%;
+                // @include toRem(margin-left, 10);
+                // margin-right: 40%;
+                padding-right: 90px*$page-home-scale;
+                // @include toRem(padding-right, 40);
+                // @include toRem(margin-right, 20);
+                // display: flex;
+                // flex-direction: column;
+                // justify-content: center;
+                text-align: left;
+                // align-items: start;
+
+                @include for-phone-only {
+                    display: flex;
+                    width: 100%;
+                    padding-right: 0;
+                    align-items: center;
+                    justify-content: center;
+                    @include toRem(margin-bottom, 12);
+                }
+
+                &__number {
+                    font-size: max(42px*$page-home-scale, 32px);
+                    font-weight: 700;
+                    @include toRem(margin-bottom, 5);
+
+                    @include for-phone-only {
+                        font-size: 6vw;
+                        font-weight: 600;
+
+                    }
+                }
+
+                &__main {
+                    font-size: max(42px*$page-home-scale, 32px);
+                    font-weight: 700;
+                    @include toRem(margin-bottom, 5);
+
+                    @include for-phone-only {
+                        font-size: 6vw;
+                        font-weight: 600;
+                        @include toRem(margin-left, 5);
+                    }
+                }
+
+                &__description {
+                    font-size: min(42px*$page-home-scale, 14px);
+                    font-weight: 600;
+                    word-wrap: break-word;
+
+                    @include for-phone-only {
+                        display: none;
+                    }
+                }
+            }
+        }
 
         &__ai-startup {
             padding: 50px*$page-home-scale 65px*$page-home-scale;
             // height: 189px*$page-home-scale;
-            background-color: $page-home-slide-9-main-color;
-            border: 1px solid $page-home-slide-9-border-color;
-            border-radius: 16px;
+            // border: 1px solid $page-home-slide-9-border-color;
+            // border-radius: 16px;
             display: flex;
             gap: 90px*$page-home-scale;
             margin-bottom: 40px*$page-home-scale;
+            justify-content: space-between;
         }
 
         &__investors {
