@@ -691,6 +691,140 @@
     &__slide-8 {
         width: 100vw;
 
+        @include for-phone-only {
+            height: 100%;
+        }
+
+        &__title {
+            // background-color: green;
+            display: flex;
+            flex-direction: column;
+            // font-size: 30px;
+            justify-content: center;
+
+
+            &__content {
+                font-size: 60px*$page-home-scale;
+                font-weight: 700;
+                margin-bottom: 4vh;
+
+                @include for-phone-only {
+                    margin: 0;
+                    font-size: 80px*$page-home-scale;
+                }
+            }
+
+            @include for-phone-only {
+                height: 20%;
+
+            }
+
+            &__btn {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                bottom: 2vh;
+                left: 50%;
+                transform: translateX(-50%);
+
+                @include for-phone-only {
+                    position: static;
+                    transform: translateX(0);
+                    @include toRem(margin-top, 17);
+                }
+
+                &__left {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // width: 200px;
+                    // height: 50px;
+                    @include toRem(width, 213);
+                    height: 60px*$page-home-scale;
+                    @include toRem(border-radius, 64);
+                    @include toRem(margin-right, 10);
+                    background: linear-gradient(90deg, #FE91EC 0%, #3838FF 100%);
+                    cursor: pointer;
+
+                    @include for-phone-only {
+                        width: 45vw;
+                        height: 120px*$page-home-scale;
+                        justify-content: space-between;
+                        @include toRem(padding-left, 16);
+                        @include toRem(padding-right, 16);
+                    }
+
+                    &__context {
+                        font-size: 24px*$page-home-scale;
+                        font-weight: 600;
+                        color: white;
+
+                        @include for-phone-only {
+                            font-size: 40px*$page-home-scale;
+
+                        }
+                    }
+
+                    &__icon {
+                        display: none;
+
+                        @include for-phone-only {
+                            display: block;
+                        }
+                    }
+                }
+
+                &__right {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @include toRem(width, 158);
+                    height: 60px*$page-home-scale;
+                    @include toRem(border-radius, 64);
+                    background: #1C1E23;
+                    cursor: pointer;
+
+                    @include for-phone-only {
+                        width: 40vw;
+                        height: 120px*$page-home-scale;
+                    }
+
+                    &__context {
+                        font-size: 24px*$page-home-scale;
+                        font-weight: 600;
+                        color: white;
+
+                        @include for-phone-only {
+                            font-size: 40px*$page-home-scale;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        &__container {
+            @include for-phone-only {
+                position: relative;
+                height: 80%;
+            }
+        }
+
+        &__numberList {
+            display: none;
+
+            @include for-phone-only {
+                display: block;
+                position: relative;
+                height: 10%;
+                font-size: 9vw;
+                font-weight: 700;
+                font-family: var(--quicksand-font);
+
+            }
+        }
+
+
         &__judge {
             &__item {
                 display: flex;
@@ -710,6 +844,11 @@
                 font-weight: 700;
                 line-height: 30px*$page-home-scale;
                 text-align: center;
+
+                @include for-phone-only {
+                    font-size: 7vw;
+                    @include toRem(margin-top, 14);
+                }
             }
 
             &__company {
@@ -718,6 +857,13 @@
                 max-width: 300px*$page-home-scale;
                 margin-top: .25rem;
                 text-align: center;
+
+                @include for-phone-only {
+                    font-size: 4vw;
+                    line-height: normal;
+                    max-width: 80vw;
+                    @include toRem(margin-top, 14);
+                }
 
                 strong {
                     background: linear-gradient(94.47deg, #31DBF2 13.86%, #ED05C7 67.39%, #D30D60 91.33%);
@@ -739,6 +885,12 @@
                 position: relative;
                 width: 60%;
                 height: 200px*$page-home-scale;
+
+                @include for-phone-only {
+                    width: 100%;
+                    max-width: 60vw;
+                    height: 60vw;
+                }
 
                 &__inner {
                     bottom: 8%;
@@ -770,6 +922,12 @@
 
         .swiper {
             padding-bottom: 90px*$page-home-scale;
+
+            @include for-phone-only {
+                padding-bottom: 0;
+                position: relative;
+                height: 80%;
+            }
         }
 
         &__slide {
@@ -777,6 +935,19 @@
             flex-direction: column;
             gap: 60px*$page-home-scale;
             width: 100%;
+
+            @include for-phone-only {
+
+                &__element2 {
+                    display: none;
+                }
+            }
+        }
+
+        .swiper-pagination {
+            @include for-phone-only {
+                display: none;
+            }
         }
 
         .swiper-pagination-fraction,

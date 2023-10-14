@@ -4,18 +4,47 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import { useRef, useState } from "react";
 import PageHomeSlideTitle from "@/components/PageHomeSlideTitle";
+import Image from "next/image"
 
 export default function EighthSlide() {
     const swiperMembersRef = useRef();
     const [currentIdx, setCurrentIdx] = useState(1);
     const [nbSlides, setNBSlides] = useState(0);
 
+    const handleClickBtnLeft = () => {
+        console.log('This is button Advisory member');
+    }
+    const handleClickBtnRight = () => {
+        console.log('This is button Core member');
+    }
+
     return (
         <SlideLayout>
             <div className="page-home__slide-8">
-                <PageHomeSlideTitle title="Technical Roadmap of the comprehensive AI platform" />
+                <div className="page-home__slide-8__title">
+                    <div className="page-home__slide-8__title__content">Initial members</div>
+
+                    <div className="page-home__slide-8__title__btn">
+                        <div className="page-home__slide-8__title__btn__left" onClick={handleClickBtnLeft}>
+                            <div className="page-home__slide-8__title__btn__left__context">
+                                Advisory member
+                            </div>
+                            <div className="page-home__slide-8__title__btn__left__icon">
+                                <Image src={"/home/star_white.png"} width={12} height={12} alt="Star" />
+                            </div>
+                        </div>
+                        <div className="page-home__slide-8__title__btn__right" onClick={handleClickBtnRight}>
+                            <div className="page-home__slide-8__title__btn__right__context">
+                                Core member
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <PageHomeSlideTitle title="Initial members" /> */}
                 <div className="page-home__slide-8__container">
                     <Swiper
+
                         onBeforeInit={(swiper) => {
                             swiperMembersRef.current = swiper;
                         }}
@@ -23,7 +52,7 @@ export default function EighthSlide() {
                         slidesPerView={1}
                         spaceBetween={40}
                         allowTouchMove={true}
-                        loop={true}
+                        // loop={true}
                         autoplay={{
                             delay: 2500,
                             disableOnInteraction: false,
@@ -55,7 +84,9 @@ export default function EighthSlide() {
                                 <JudgeSlide value={e} />
                             </SwiperSlide>
                         ))}
+
                     </Swiper>
+                    <span className="page-home__slide-8__numberList">1 - 20</span>
                 </div>
 
                 <svg className="page-home__slide-8__judge__clip-path" viewBox="0 0 162 159" xmlns="http://www.w3.org/2000/svg">

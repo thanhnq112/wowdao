@@ -15,8 +15,8 @@ export default function JudgeElement() {
                 </div>
             </div>
             <div className="page-home__slide-8__judge__name">Aamar Hussain</div>
-            <div className="page-home__slide-8__judge__company"> <strong>Director</strong> - Data &amp; AI Customer Solution Architecture, <strong>Microsoft</strong>
-            </div>
+            {/* <div className="page-home__slide-8__judge__company"> <strong>Director</strong> - Data &amp; AI Customer Solution Architecture, <strong>Microsoft</strong> */}
+            <div className="page-home__slide-8__judge__company">The Walt Disney Company</div>
         </div >
     )
 }
